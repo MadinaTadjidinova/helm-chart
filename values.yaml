@@ -1,16 +1,11 @@
-# Default values for your chart
-
+name: helm-chart
 replicaCount: 1
+
 image:
-  repository: httpd
-  tag: latest
+  repository: my-image-repo/my-app
   pullPolicy: IfNotPresent
+  tag: v1.0.0
 
 service:
-  enabled: true
   type: ClusterIP
   port: 8080
-
-# Additional configuration options
-# ...
-

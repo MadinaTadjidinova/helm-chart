@@ -1,9 +1,9 @@
+# C:\Users\Madina\Desktop\fromNew\Dev-X\DevOps\project\helm-chart
 apiVersion: v2
 name: helm-chart
+description: A Helm chart for Kubernetes
+type: application
 version: 1.0.0
-description: My Helm chart for deploying the My App application
-
-# Additional metadata fields (optional)
 appVersion: 1.0.0
 keywords:
   - helm-chart
@@ -11,5 +11,3 @@ keywords:
 maintainers:
   - name: MadinaTad 
     email: madina.tadjidinova@gmail.com
-
-# C:\Users\Madina\Desktop\fromNew\Dev-X\DevOps\project\helm-chart
