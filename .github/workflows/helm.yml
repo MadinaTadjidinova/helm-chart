@@ -53,10 +53,10 @@ jobs:
           sudo apt-get install helm
 
       - name: Lint Helm Chart
-        run: helm lint /c/Users/Madina/Desktop/fromNew/Dev-X/DevOps/project/helm-chart
+        run: helm lint https://github.com/MadinaTadjidinova/helm-chart.git
 
       - name: Package Helm Chart
-        run: helm package /c/Users/Madina/Desktop/fromNew/Dev-X/DevOps/project/helm-chart --destination output/
+        run: helm package https://github.com/MadinaTadjidinova/helm-chart.git --destination output/
 
       - name: Configure Git
         run: |
