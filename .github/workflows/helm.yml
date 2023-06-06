@@ -52,11 +52,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install helm
 
+      - name: Clone Helm Chart Repository
+        run: |
+          git clone https://github.com/MadinaTadjidinova/helm-chart.git
+
       - name: Lint Helm Chart
-        run: helm lint https://github.com/MadinaTadjidinova/helm-chart.git
+        run: helm lint helm-chart/
 
       - name: Package Helm Chart
-        run: helm package https://github.com/MadinaTadjidinova/helm-chart.git --destination output/
+        run: helm package helm-chart/ --destination output/
 
       - name: Configure Git
         run: |
