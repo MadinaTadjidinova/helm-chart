@@ -1,0 +1,16 @@
+# Default values for your chart
+
+replicaCount: 1
+image:
+  repository: httpd
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 8080
+
+# Additional configuration options
+# ...
+

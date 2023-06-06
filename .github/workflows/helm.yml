@@ -1,0 +1,30 @@
+name: Helm Chart Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: '3.x'
+
+      - name: Lint Helm chart
+        run: |
+          helm lint /c/Users/Madina/Desktop/fromNew/Dev-X/DevOps/project/helm-chart
+
+      - name: Package Helm chart
+        run: |
+          helm package /c/Users/Madina/Desktop/fromNew/Dev-X/DevOps/project/helm-chart
+
+      - name: Push Helm chart to repository
+        run: |
+          helm push /c/Users/Madina/Desktop/fromNew/Dev-X/DevOps/project/helm-chart https://github.com/MadinaTadjidinova/helm-chart.git
