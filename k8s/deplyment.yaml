@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deploy
+  namespace: argocd
+  labels:
+    app: httpd-app
+spec:
+  selector:
+    matchLabels:
+      app: httpd-app
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: httpd-app
+    spec:
+      containers:
+        - name: httpd-app-john
+          image: madinatad/myapp:v1
+          ports:
+            - containerPort: 8080
